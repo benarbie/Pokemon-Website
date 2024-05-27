@@ -9,10 +9,22 @@
         <link rel="stylesheet" href="{% static 'pokemon/main.css' %}">
     </head>
     <body>
+        <div>
+            <img class="logo" src=".../testing_html/pokemon-logo-black.png" alt="pokemon logo">
+        </div>
         <div class="main">
             <table class="pokemon-table">
+                <tr class='col-titles'>
+                    <td class='1 col-title'>Entry</td>
+                    <td class='2 col-title'>Sprite</td>
+                    <td class='3 col-title'>Name</td>
+                    <td class='4 col-title'>Type 1</td>
+                    <td class='5 col-title'>Type 2</td>
+
+                </tr>
                 {% for mon in data %}
                     <tr>
+                        {% if forloop.counter < 1000 %}
                         <td class="entry">
                             {% if forloop.counter < 10 %}
                                 00{{ forloop.counter }}
@@ -22,6 +34,12 @@
                                 {{ forloop.counter }}
                             {% endif %}
                         </td>
+                        {% else %}
+                            <td class='entry-1000s'>
+                                {{ forloop.counter }}
+                            </td>
+                        {% endif %}
+                        
                         {% comment %} POKEMON IMAGE {% endcomment %}
                         <td><img class="art" src="{{ mon.src }}" alt="{{ mon.name }}"></td>
 
@@ -29,11 +47,11 @@
                         <td class="name">{{ mon.name }}</td>
 
                         {% comment %} POKEMON TYPE 1 {% endcomment %}
-                        <td class="type1 type-{{ mon.type1|lower }}">{{ mon.type1 }}</td>
+                        <td class="type type1 type-{{ mon.type1|lower }}">{{ mon.type1 }}</td>
 
                         {% comment %} POKEMON TYPE 2 {% endcomment %}
                         {% if mon.type2 != '' %}   
-                        <td class="type2 type-{{ mon.type2|lower }}">{{ mon.type2 }}</td>
+                        <td class="type type2 type-{{ mon.type2|lower }}">{{ mon.type2 }}</td>
                         {% endif %}
 
                     </tr>
