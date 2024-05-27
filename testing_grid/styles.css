@@ -1,0 +1,53 @@
+.basic-grid {
+    height: 85vh;
+    display: grid;
+
+    grid-template-areas: 
+    'a a b b c c'
+    'a a d d c c'
+    'e e d d f f'
+    'e e d d f f'
+    'g g g g h h'
+    'g g g g i i';
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1rem;
+
+    justify-items: end;
+}
+.card:nth-child(1) {
+    grid-area: a;
+    background-image: linear-gradient(rgb(235, 154, 154), rgb(204, 139, 139));
+}
+.card:nth-child(2) {
+    grid-area: b;
+    background-image: linear-gradient(rgb(235, 227, 154), rgb(204, 197, 132));
+}
+.card:nth-child(3) {
+    grid-area: c;
+    background-image: linear-gradient(rgb(177, 235, 154), rgb(123, 196, 120));
+}
+.card:nth-child(4) {
+    grid-area: d;
+    background-image: linear-gradient(rgb(154, 186, 235), rgb(100, 128, 180));
+}
+.card:nth-child(5) {
+    grid-area: e;
+    background-image: linear-gradient(rgb(235, 227, 154), rgb(204, 197, 132));
+}
+.card:nth-child(6) {
+    grid-area: f;
+    background-image: linear-gradient(rgb(235, 227, 154), rgb(204, 197, 132));
+}
+.card:nth-child(7) {
+    grid-area: g;
+    background-image: linear-gradient(rgb(248, 188, 138), rgb(199, 148, 101));
+}
+.card:nth-child(8) {
+    grid-area: h;
+    background-image: linear-gradient(rgb(235, 154, 154), rgb(204, 139, 139));
+}
+.card:nth-child(9) {
+    grid-area: i;
+    background-image: linear-gradient(rgb(177, 235, 154), rgb(123, 196, 120));
+}

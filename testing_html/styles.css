@@ -1,0 +1,64 @@
+body {
+    background: linear-gradient(rgb(232, 243, 252), rgb(181, 195, 196));
+}
+.pokemon-table {
+    background-color: rgb(235, 252, 253);
+    height: 100vh;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 700px;
+    border-radius: 30px;
+    padding: 20px;
+}
+.pokemon-table tr {
+    display: grid;
+    grid-template-areas: 'number sprite name type1 type2';
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr 3fr 2fr 2fr;
+
+    align-items: center;
+    padding-top: 10px;
+}
+.pokemon-table td {
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.entry {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.art {
+    max-width: 70px;
+    grid-area: sprite;
+    background-image: linear-gradient(rgb(239, 240, 240), rgb(222, 222, 222));
+    border-radius: 20px;
+    padding: 5px;
+}
+.name {
+    grid-area: name;
+    background-image: linear-gradient(rgb(222, 222, 222), rgb(200, 200, 200));
+    padding: 5%;
+    justify-self: start;
+    border: 2px solid gray;
+    border-radius: 15px;
+    width: 70%;
+
+
+}
+.type1 {
+    grid-area: type1;
+    background-image: linear-gradient(rgb(110, 241, 132), rgb(91, 187, 120));
+    padding: 5%;
+    justify-self: start;
+    border: 2px solid rgb(45, 97, 47);
+    border-radius: 15px;
+}
+.type2 {
+    grid-area: type2;
+    background-image: linear-gradient(rgb(204, 110, 241), rgb(176, 91, 187));
+    padding: 5%;
+    justify-self: start;
+    border: 2px solid rgb(75, 10, 95);
+    border-radius: 15px;
+}
+
+

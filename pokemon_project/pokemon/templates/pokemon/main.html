@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="stylesheet" href="{% static 'pokemon/main.css' %}">
+    </head>
+    <body>
+        <div class="main">
+            <table class="pokemon-table">
+                {% for mon in data %}
+                    <tr>
+                        <td class="entry">
+                            {% if forloop.counter < 10 %}
+                                00{{ forloop.counter }}
+                            {% elif forloop.counter < 100 %}
+                                0{{ forloop.counter }}
+                            {% else %}
+                                {{ forloop.counter }}
+                            {% endif %}
+                        </td>
+                        {% comment %} POKEMON IMAGE {% endcomment %}
+                        <td><img class="art" src="{{ mon.src }}" alt="{{ mon.name }}"></td>
+
+                        {% comment %} POKEMON NAME {% endcomment %}
+                        <td class="name">{{ mon.name }}</td>
+
+                        {% comment %} POKEMON TYPE 1 {% endcomment %}
+                        <td class="type1 type-{{ mon.type1|lower }}">{{ mon.type1 }}</td>
+
+                        {% comment %} POKEMON TYPE 2 {% endcomment %}
+                        {% if mon.type2 != '' %}   
+                        <td class="type2 type-{{ mon.type2|lower }}">{{ mon.type2 }}</td>
+                        {% endif %}
+
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+    </html>

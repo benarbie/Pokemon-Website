@@ -1,0 +1,125 @@
+body {
+    background: linear-gradient(rgb(232, 243, 252), rgb(181, 195, 196));
+}
+.pokemon-table {
+    background-color: rgb(235, 252, 253);
+    height: 100vh;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 700px;
+    border-radius: 30px;
+    padding: 20px;
+}
+.pokemon-table tr {
+    display: grid;
+    grid-template-areas: 'number sprite name type1 type2';
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 3fr 2fr 2fr;
+    gap: 2rem;
+
+    align-items: center;
+    padding-top: 10px;
+}
+.pokemon-table td {
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.entry {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.art {
+    min-width: 100%;
+    max-width: 100%;
+    font-size: 20px;
+    grid-area: sprite;
+    background-image: linear-gradient(rgb(239, 240, 240), rgb(222, 222, 222));
+    border-radius: 20px;
+    padding: 5px;
+}
+.name {
+    grid-area: name;
+    background-image: linear-gradient(rgb(222, 222, 222), rgb(200, 200, 200));
+    padding: 5%;
+    justify-self: start;
+    border: 2px solid gray;
+    border-radius: 15px;
+    min-width: 100%;
+    max-width: 100%;
+}
+.type1 {
+    grid-area: type1;
+    padding: 5%;
+    justify-self: center;
+    border: 2px solid rgb(45, 97, 47);
+    border-radius: 15px;
+    width: 100%;
+}
+.type2 {
+    grid-area: type2;
+    padding: 5%;
+    justify-self: center;
+    border: 2px solid rgb(75, 10, 95);
+    border-radius: 15px;
+    width: 100%;
+}
+
+
+/* Type Elements */
+.type-fire {
+    background-image: linear-gradient(rgba(250, 123, 63, 0.562), rgba(206, 101, 52, 0.562));
+}
+.type-grass {
+    background-image: linear-gradient(rgb(124, 241, 130), rgb(108, 184, 105));
+}
+.type-water {
+    background-image: linear-gradient(rgb(84, 213, 252), rgb(58, 160, 185));
+}
+.type-flying {
+    background-image: linear-gradient(rgb(228, 182, 250), rgb(191, 153, 209));
+}
+.type-dark {
+    background-image: linear-gradient(rgb(124, 67, 40), rgb(83, 45, 27));
+}
+.type-electric {
+    background-image: linear-gradient(rgb(243, 227, 83), rgb(201, 188, 70));
+}
+.type-fighting {
+    background-image: linear-gradient(rgb(223, 148, 114), rgb(158, 111, 89));
+}
+.type-normal {
+    background-image: linear-gradient(rgb(184, 182, 182), rgb(150, 150, 150));
+}
+.type-rock {
+    background-image: linear-gradient(rgba(136, 90, 59, 0.616), rgba(94, 62, 41, 0.616));
+    
+}
+.type-ground {
+    background-image: linear-gradient(rgb(180, 146, 102), rgb(151, 123, 86));
+}
+.type-poison {
+    background-image: linear-gradient(rgb(187, 115, 235), rgb(152, 94, 190));
+}
+.type-psychic {
+    background-image: linear-gradient(rgb(228, 111, 218), rgb(192, 94, 184));
+}
+.type-fairy {
+    background-image: linear-gradient(rgb(247, 171, 240), rgb(206, 150, 201));
+}
+.type-dragon {
+    background-image: linear-gradient(rgb(72, 25, 243), rgb(71, 28, 200));
+    color: white;
+}
+.type-steel {
+    background-image: linear-gradient(rgb(219, 219, 219), rgb(184, 183, 183));
+}
+.type-ice {
+    background-image: linear-gradient(rgb(187, 236, 236), rgb(159, 201, 201));
+}
+.type-ghost {
+    background-image: linear-gradient(rgb(129, 93, 211), rgb(106, 82, 161));
+}
+.type-bug {
+    background-image: linear-gradient(rgb(187, 241, 61), rgb(150, 190, 57));
+}
+
+
