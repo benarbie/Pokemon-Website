@@ -19,35 +19,46 @@
         </header>
 
         <div class="main">
-            <div class='tabs-div'>
+            <div class="tabs-barrr">
+                
+            </div>
+            <div class="tabs-bar">
+                <img id="tabs-bar-img" src="{% static 'images/tab-png.png' %}" alt="tab">
                 <ul class='tabs-list'>
-                    <li class="tab">Type Chart</li>
-                    <li class="tab">Another tab</li>
-                    <li class="tab">Pokedex</li>
+                    <a href=""><li class="tab">Type Chart</li></a>
+                    <a href=""><li class="tab">Another tab</li></a>
+                    <a href=""><li class="tab">Pokedex</li></a>
                 </ul>
+            </div>
+
+            {% comment %} Wiki Table {% endcomment %}
+            <div class="top-frame">
 
             </div>
             <table class="pokemon-table">
-                <tr class='col-titles'>
-                    <td class='1 col-title'>Entry</td>
-                    <td class='2 col-title'>Sprite</td>
-                    <td class='3 col-title'>Name</td>
-                    <td class='4 col-title'>Type 1</td>
-                    <td class='5 col-title'>Type 2</td>
 
+                {% comment %} Wiki Table Titles {% endcomment %}
+                <tr class='col-titles'>
+                    <td class='col-title'>Entry</td>
+                    <td class='col-title'>Sprite</td>
+                    <td class='col-title'>Name</td>
+                    <td class='col-title'>Type 1</td>
+                    <td class='col-title'>Type 2</td>
                 </tr>
+
+                {% comment %} Wiki Table POKEMON {% endcomment %}
                 {% for mon in data %}
                     <tr>
                         {% if forloop.counter < 1000 %}
-                        <td class="entry">
-                            {% if forloop.counter < 10 %}
-                                00{{ forloop.counter }}
-                            {% elif forloop.counter < 100 %}
-                                0{{ forloop.counter }}
-                            {% else %}
-                                {{ forloop.counter }}
-                            {% endif %}
-                        </td>
+                            <td class="entry">
+                                {% if forloop.counter < 10 %}
+                                    00{{ forloop.counter }}
+                                {% elif forloop.counter < 100 %}
+                                    0{{ forloop.counter }}
+                                {% else %}
+                                    {{ forloop.counter }}
+                                {% endif %}
+                            </td>
                         {% else %}
                             <td class='entry-1000s'>
                                 {{ forloop.counter }}

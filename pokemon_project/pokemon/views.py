@@ -6,7 +6,7 @@ def pokemon(request):
 
     data = []
 
-    with open('../info/mons.csv') as file:
+    with open('../info/mons.csv', encoding='utf-8') as file:
         reader = csv.reader(file)
         for mon in reader:
             data.append({'name': mon[0], 'type1': mon[1], 'type2': mon[2], 'src': mon[3]})
