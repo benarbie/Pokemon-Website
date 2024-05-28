@@ -4,15 +4,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Poke-Info</title>
 
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
     </head>
     <body>
-        <div>
-            <img class="logo" src="{% static 'images/pokemon_logo.png' %}" alt="pokemon logo">
-        </div>
+
+        {% comment %} LOGO + WEB DESCRIPTION {% endcomment %}
+        <header>
+            <div>
+                <img id="logo" src="{% static 'images/pokemon_logo.png' %}" alt="pokemon logo">
+                <h1 id="web-desc">The best pokemon website!</h1>
+            </div>
+        </header>
+
         <div class="main">
+            <div class='tabs-div'>
+                <ul class='tabs-list'>
+                    <li class="tab">Type Chart</li>
+                    <li class="tab">Another tab</li>
+                    <li class="tab">Pokedex</li>
+                </ul>
+
+            </div>
             <table class="pokemon-table">
                 <tr class='col-titles'>
                     <td class='1 col-title'>Entry</td>

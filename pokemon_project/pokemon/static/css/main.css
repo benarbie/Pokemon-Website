@@ -1,12 +1,47 @@
 body {
     background: linear-gradient(rgb(224, 220, 205), rgb(182, 180, 169));
 }
+/* Header */
+#logo {
+    display: flex;
+    height: 20rem;
+    width: 50rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+#web-desc {
+    text-align: center;
+    font-family: fantasy;
+}
+.tabs-div {
+    height: 3rem;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 10rem;
+}
+.tabs-list {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 0 1rem;
+    
+}
+.tab {
+    font-size: 1.5rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    background: rgb(202, 193, 160);
+    border-radius: 10px;
+}
+/* Main Body */
 .pokemon-table {
     background-color: rgb(252, 251, 249);
     height: 100vh;
     width: 600px;
     margin: 0 auto;
-    margin-top: 700px;
+    margin-top: 3rem;
     border-radius: 30px;
     padding: 20px;
     border-collapse: collapse;
