@@ -2,7 +2,7 @@ from django.shortcuts import render
 import csv
 
 
-def pokemon(request):
+def main(request):
 
     data = []
 
@@ -13,3 +13,6 @@ def pokemon(request):
 
 
     return render(request, 'pokemon/main.html', {'data': data})
+
+def wiki_page(request):
+    return render(request, 'pokemon/wiki-page.html')
