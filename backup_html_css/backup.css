@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    background: linear-gradient(rgb(250, 244, 230), rgb(168, 168, 153));
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+main {
+    height: 90vh;
+    width: 90vh;
+    display: grid;
+    grid-template-areas: 
+    'type-effects data image '
+    'type-effects stats stats';
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    row-gap: 5rem;
+    column-gap: 7rem;
+}
+/* Data Div */
+.pokemon-data {
+    align-self: center;
+    grid-area: data;
+    height: 10rem;
+    width: 21rem;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-family:monospace;
+    
+}
+.data-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 15px;
+    border-top: 1px solid rgb(204, 204, 204);
+}
+.entry-num {
+    background-image: linear-gradient(rgb(184, 182, 182), gray);
+    padding: 5px;
+    border-radius: 15px;
+    
+    
+}
+.type {
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+}
+.type-1 {
+    background-image: linear-gradient(rgb(78, 32, 245), rgb(64, 26, 199));
+    border: 2px solid rgb(40, 17, 126);
+}
+.type-2 {
+    background-image: linear-gradient(rgb(193, 122, 252), rgb(165, 106, 214));
+    border: 2px solid rgb(120, 76, 156);
+}
+/* Image Div */
+.pokemon-image {
+    display: flex;
+    justify-content: center;
+    grid-area: image;
+    height: 40rem;
+    width: 50rem;
+}
+.pokemon-image img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+/* Type Effects Div */
+.type-effects {
+    grid-area: type-effects;
+    height: 90vh;
+    width: 50rem;
+    display: grid;
+    grid-template-areas: 
+    'e2x e05x'
+    'e4x e0x'
+    'e1x e1x';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    column-gap: 10rem;
+    border: 2px solid black;
+}
+.outer-type-effect-div {
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 12rem;
+    max-width: 15rem;
+    border: 2px solid black;
+    overflow: hidden;
+}
+.inner-type-effect-div {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border: 2px solid blue;
+}
+.effect-2x {
+    grid-area: e2x;   
+}
+.effect-2x h1 {
+    background-image: linear-gradient(rgba(109, 221, 109, 0.897), rgba(80, 180, 80, 0.904));
+}
+.effect-05x { 
+    grid-area: e05x;
+}
+.effect-05x h1 {
+    background-image: linear-gradient(rgba(241, 121, 121, 0.897), rgba(206, 104, 104, 0.897));
+}
+.effect-4x {
+    grid-area: e4x;
+}
+.effect-4x h1 {
+    background-image: linear-gradient(rgba(159, 245, 159, 0.897), rgba(132, 204, 132, 0.89));
+}
+.effect-0x {
+    grid-area: e0x;
+}
+.effect-0x h1 {
+    background-image: linear-gradient(rgba(83, 83, 83, 0.712), rgba(45, 46, 45, 0.699));
+}
+.effect-1x {
+    justify-self: center;
+    grid-area: e1x;
+}
+.effect-1x h1 {
+    background-image: linear-gradient(rgba(198, 199, 198, 0.897), rgba(156, 156, 156, 0.89));
+}
+.outer-type-effect-div h1 {
+    display: flex;
+    height: 4rem;
+    width: 8rem;  
+    margin-top: 0;                  
+    border-radius: 10px;
+    font-size: 2rem;
+    font-family:Arial, Helvetica, sans-serif ;
+    border: 3px solid rgb(100, 100, 100);
+}
+/* Stats Div */
+.pokemon-stats {
+    margin: 0 auto;
+    grid-area: stats;
+    height: 21.5rem;
+    width: 85rem;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.stat-div {
+    display: grid;
+    grid-template-columns: 2fr 1fr 10fr;
+    grid-template-rows: repeat(1fr, 6);
+    align-items: center;
+    height: 3rem;
+    
+    max-width: 100%;
+}
+.stat-name {
+    font-size: 2rem;
+    font-family: monospace;
+    word-spacing: -50%;
+    color: rgba(0, 0, 0, 0.603);
+    white-space: nowrap;
+    text-align: right;
+}
+.stat-value {
+    font-size: 2rem;
+    font-family: monospace;
+    margin-left: 1.5rem;
+}
+.stat-bar {
+    height: 1rem;
+    max-width: 70%;
+    width: calc(200 / 255 * 100%);
+    background-color: rgb(111, 207, 127);
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+.bold {
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+

@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page</title>
+        <link rel="stylesheet" href="{% static 'css/wiki-page.css' %}">
+    </head>
+    <body>
+        <main>
+            {% comment %} POKEMON DATA {% endcomment %}
+            <div class="pokemon-data">
+                <h1 class="div-title"></h1>
+                    <span class='data-row'>
+                        <span class="entry-text">Dex Entry</span>
+                        <span class="entry-num">0384</span>
+                    </span>
+                    <span class='data-row'>
+                        <span>Type</span>
+                        <span class="type type-1">Dragon</span>
+                        <span class="type type-2">Flying</span>
+                    </span>
+            </div>
+            {% comment %} POKEMON IMAGE {% endcomment %}
+            <div class="pokemon-image">
+                <img src="https://static.wikia.nocookie.net/pokemon/images/e/e4/384Rayquaza.png" alt="charizard">
+                
+            </div>
+            {% comment %} POKEMON TYPE EFFECTS {% endcomment %}
+            <div class="type-effects">
+                <div class="outer-type-effect-div effect-2x">
+                    <h1 class="type-effect">2x</h1>
+                    <div class="inner-type-effect-div">
+                    </div>
+                </div>
+                <div class="outer-type-effect-div effect-05x">
+                    <h1 class="type-effect">0.5x</h1>
+                    <div class="inner-type-effect-div"></div>
+                </div>
+                <div class="outer-type-effect-div effect-4x"">
+                    <h1 class="type-effect">4x</h1>
+                    <div class="inner-type-effect-div></div>
+                </div>
+                <div class="outer-type-effect-div effect-0x">
+                    <h1 class="type-effect">0x</h1>
+                    <div class="inner-type-effect-div"></div>
+                </div>
+                <div class="outer-type-effect-div effect-1x">
+                    <h1 class="last type-effect">1x</h1>
+                    <div class="inner-type-effect-div"></div>
+                </div>
+            </div>
+            {% comment %} POKEMON STATS {% endcomment %}
+            <div class="pokemon-stats">
+                <div class="stat-div">
+                    <span class="stat-name">Hp</span>
+                    <span class="stat-value">105</span>
+                    <span class="stat-bar"></span>
+                </div>
+                <div class="stat-div">
+                    <span class="stat-name">Attack</span>
+                    <span class="stat-value">135</span>
+                    <span class="stat-bar"></span>
+                </div>
+                <div class="stat-div">
+                    <span class="stat-name">Defense</span>
+                    <span class="stat-value">85</span>
+                    <span class="stat-bar"></span>
+                </div>
+                <div class="stat-div">
+                    <span class="stat-name">Sp. Attack</span>
+                    <span class="stat-value">95</span>
+                    <span class="stat-bar"></span>
+                </div>
+                <div class="stat-div">
+                    <span class="stat-name">Sp. Defense</span>
+                    <span class="stat-value">45</span>
+                    <div class="stat-bar"></div>
+                </div>
+                <div class="stat-div">
+                    <span class="stat-name">Speed</span>
+                    <span class="stat-value">105</span>
+                    <div class="stat-bar"></div>
+                </div>
+                <div class="stat-div">
+                    <span class="stat-name">Total</span>
+                    <span class="stat-value bold">590</span>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
