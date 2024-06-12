@@ -1,0 +1,46 @@
+@import 'mixins';
+
+.form-switcher {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 5vh;
+    min-width: 0vw;
+    max-width: 40vw;
+    background-color: rgb(235, 235, 235);
+    margin-right: auto;
+    margin-left: 30vw;
+    border: 8px solid gray;
+    border-radius: 15px;
+    overflow: hidden;
+
+    // Forms List
+    .form-list {
+        display: flex;
+        height: 100%;
+        width: 100%;    
+        list-style-type: none;
+        gap: 2vmin;
+        justify-content: space-between;
+        padding: 0.1rem;
+
+        li {
+            @include flexCenter(row);
+            min-width: 4vw;
+            font-family: monospace;
+            font-size: 1.5rem;
+            background-color: rgb(196, 196, 196);
+            border: 3px solid gray;
+            border-radius: 10px;
+            padding: 0.4rem;
+            transition: .2s all;
+            &:hover {
+                background-color: darken(rgb(196, 196, 196), 25%);
+                cursor: pointer;
+            }
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+}

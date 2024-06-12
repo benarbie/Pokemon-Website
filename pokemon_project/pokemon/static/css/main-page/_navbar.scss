@@ -1,0 +1,69 @@
+@import 'mixins';
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 25vw;
+    height: 8vh;
+    margin-bottom: 2vh;
+    gap: 1rem;
+    
+    > div {
+        height: 100%;
+    }
+    .buttons-frame {
+        margin-top: 8vmin;
+        display: flex;
+        width: 100%;
+        height: 80%;
+        background-color: rgb(71, 71, 71);
+        border: 8px solid rgb(71, 71, 71);
+        border-radius: 15px;
+        gap: 1rem;
+        .nav-button {
+            @include flexCenter(row);
+            text-align: center;
+            border-radius: 5px;
+            color: rgba(255, 255, 255, 0.85);
+            background-color: rgb(138, 138, 138);
+            height: 100%;
+            width: 33%;
+            font-size:1.5rem;
+            font-family: monospace;
+            padding: 0.5rem;
+            transition: hover .2s;
+            transition: opacity 1s;
+            &:hover {
+                background-color: rgb(200,200,200);
+                cursor: pointer;
+            }
+        }
+    }
+    .search-bar {
+        margin-top: 8vmin;
+        display:flex;
+        justify-content: flex-end;
+        width: 40%;
+        > input {
+            display: block;
+            height: 80%;
+            width: 100%;
+            border-radius: 20px;
+            font-family: monospace;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.85);
+            background-color: rgb(70, 70, 70);
+            border: 5px solid rgb(131, 131, 131);;
+            transition: .2s all;
+
+            &::placeholder {
+                font-size: 2rem;
+                color: rgba(255, 255, 255, 0.85);
+            }
+            &:focus {
+                outline: none;
+                border: 8px solid rgb(200, 200, 200);
+            }
+        }
+    }
+    }

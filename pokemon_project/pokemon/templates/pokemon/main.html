@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Poke-Info</title>
 
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main-page/main.css' %}">
     </head>
     <body>
 
@@ -14,7 +14,7 @@
         <header>
             <div>
                 <img id="logo" src="{% static 'images/pokemon_logo.png' %}" alt="pokemon logo">
-                <h1 id="web-desc">The best pokemon website!</h1>
+                <h1 id="web-desc">The best <span id="pokemon-enlarge">POKÉMON</span> website!</h1>
             </div>
         </header>
 
@@ -22,14 +22,15 @@
             <div class="tabs-barrr">
                 
             </div>
-            <div class="tabs-bar">
-                <img id="tabs-bar-img" src="{% static 'images/tab-png.png' %}" alt="tab">
-                <ul class='tabs-list'>
-                    <a href="{% url 'wiki-page' %}"><li class="tab">Wiki Page</li></a>
-                    <a href=""><li class="tab">Another tab</li></a>
-                    <a href=""><li class="tab">Pokedex</li></a>
-                </ul>
-            </div>
+            <nav class="navbar">
+                <div class="buttons-frame">
+                    <div class="nav-button">About</div>
+                    <div class="nav-button">Type<br>Chart</div>
+                </div> 
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+            </nav>
 
             {% comment %} Wiki Table {% endcomment %}
             <div class="top-frame">
@@ -47,36 +48,36 @@
                 </tr>
 
                 {% comment %} Wiki Table POKEMON {% endcomment %}
-                {% for mon in data %}
+                {% for mon in pokemon %}
                     <tr>
                         {% if forloop.counter < 1000 %}
                             <td class="entry">
                                 {% if forloop.counter < 10 %}
-                                    00{{ forloop.counter }}
+                                    00{{ mon.entry }}
                                 {% elif forloop.counter < 100 %}
-                                    0{{ forloop.counter }}
+                                    0{{ mon.entry }}
                                 {% else %}
-                                    {{ forloop.counter }}
+                                    {{ mon.entry }}
                                 {% endif %}
                             </td>
                         {% else %}
                             <td class='entry-1000s'>
-                                {{ forloop.counter }}
+                                {{ mon.entry }}
                             </td>
                         {% endif %}
                         
                         {% comment %} POKEMON IMAGE {% endcomment %}
-                        <td><img class="art" src="{{ mon.src }}" alt="{{ mon.name }}"></td>
+                        <td><img class="art" src="{{ mon.sprite }}" alt="{{ mon.name }}"></td>
 
                         {% comment %} POKEMON NAME {% endcomment %}
-                        <td class="name">{{ mon.name }}</td>
+                        <td class="name"><a href="{% url 'wiki-page' entry=mon.entry %}">{{ mon.name }}</a></td>
 
                         {% comment %} POKEMON TYPE 1 {% endcomment %}
                         <td class="type type1 type-{{ mon.type1|lower }}">{{ mon.type1 }}</td>
 
                         {% comment %} POKEMON TYPE 2 {% endcomment %}
                         {% if mon.type2 != '' %}   
-                        <td class="type type2 type-{{ mon.type2|lower }}">{{ mon.type2 }}</td>
+                            <td class="type type2 type-{{ mon.type2|lower }}">{{ mon.type2 }}</td>
                         {% endif %}
 
                     </tr>

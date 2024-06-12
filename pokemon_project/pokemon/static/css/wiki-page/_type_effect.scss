@@ -1,0 +1,135 @@
+@import 'mixins';
+
+.type-effects {
+    @include flexCenter(column);
+    padding: 1vmin;
+    grid-area: type;
+    
+    > h1 {
+        font-family: monospace;
+        font-size: 2.5rem;
+        margin: 0;
+        margin-top: -10%;
+        margin-bottom: 2%;
+        border-bottom: 8px solid #1e1e1e;
+        border-radius: 15%;
+        padding-bottom: 0.3vmin;
+    }
+    .type-effects-div {
+        height: 100%;
+        width: 90%;
+        display: grid;
+        grid-template-areas:
+        'halfx zerox'
+        'onex onex'
+        'fourx twox';
+        column-gap: 5vmin;
+        row-gap: 1vmin;
+
+        > div {
+            padding: 0.5vmin;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(rgb(248, 248, 248), rgb(219, 219, 219));
+            height: 100%;
+            border-radius: 15px;
+            border: 4px solid black;
+            
+            // The element title
+            .type-effects-title {
+                @include flexCenter(row);
+                width: 90%;
+                height: 20%;
+                
+                border: 3px solid black;
+                border-radius: 15px;
+                margin-bottom: 0.5vmin;
+            }
+            // The span elements
+            .type-effects-inner-div {
+                width: 20vmin;
+                height: 11.5vmin;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, 25%);
+                grid-template-rows: repeat(auto-fit, 3.5vmin);
+                span {
+                    @include coolShadow;
+                    @include flexCenter(row);
+                    justify-self: center;
+                    height: 3vmin;
+                    width: 4.5vmin;
+                    font-size: 1rem;
+                    font-family: monospace;
+                    border-radius: 10px;
+                    color: white;
+                    border: 3px solid black;
+                }
+            }
+            
+            
+        }
+        // The grid elements
+        .fourx {
+            grid-area: fourx;
+            width: 80%;
+            justify-self: flex-end;
+            .type-effects-title {
+                background-image: linear-gradient(#b2f2bb, #b2f2bb);
+            }
+        }
+        .twox {
+            grid-area: twox;
+            width: 80%;
+            .type-effects-title {
+                background-image: linear-gradient(#69db7c, #69db7c);
+            }
+        }
+        .onex {
+            grid-area: onex;
+            justify-self: center;
+            width: 40%;
+            .type-effects-title {
+                background-image: linear-gradient(#ced4da, #ced4da);
+            }
+        }
+        .halfx {
+            grid-area: halfx;
+            width: 80%;
+            justify-self: flex-end;
+            .type-effects-title {
+                background-image: linear-gradient(#ff8787, #ff8787);
+            }
+        }
+        .zerox {
+            grid-area: zerox;
+            width: 80%;
+            .type-effects-title {
+                background-image: linear-gradient(#1e1e1e, #1e1e1e);
+                color: white;
+            }
+        }
+    }
+}
+.fire {background-image: linear-gradient(#fd7e14, darken(#fd7e14, 10%));}
+.water {background-image: linear-gradient(#4dabf7, darken(#4dabf7, 10%));}
+.grass {background-image: linear-gradient(#69db7c, darken(#69db7c, 10%));}
+.rock {background-image: linear-gradient(#a18072, darken(#a18072, 10%));}
+.poison {background-image: linear-gradient(#da77f2, darken(#da77f2, 10%));}
+.bug {background-image: linear-gradient(#aae30d, darken(#aae30d, 10%));}
+.ground {background-image: linear-gradient(#c39569, darken(#c39569, 10%));}
+.fairy {background-image: linear-gradient(#ffadcb, darken(#ffadcb, 10%));}
+.electric {background-image: linear-gradient(#ffd43b, darken(#ffd43b, 10%));}
+.fighting {background-image: linear-gradient(#d12929, darken(#d12929, 10%));}
+.flying {background-image: linear-gradient(#aeb3f9, darken(#aeb3f9, 10%));}
+.normal {background-image: linear-gradient(#cdc1a7, darken(#cdc1a7, 10%));}
+.steel {background-image: linear-gradient(#b3b3b3, darken(#b3b3b3, 10%));}
+.dragon {background-image: linear-gradient(#5d31e3, darken(#5d31e3, 10%));}
+.dark {background-image: linear-gradient(#715247, darken(#715247, 10%));}
+.ice {background-image: linear-gradient(#99e9f2, darken(#99e9f2, 10%));}
+.ghost {background-image: linear-gradient(#8066cc, darken(#8066cc, 10%));}
+.psychic {background-image: linear-gradient(#f75991, darken(#f75991, 10%));}
+
+
+
+

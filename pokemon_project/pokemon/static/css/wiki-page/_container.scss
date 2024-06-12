@@ -1,0 +1,31 @@
+@import 'mixins';
+
+body {
+    @include flexCenter(column);
+    // display: grid;
+    // place-items: center;
+    height: 180vh;
+    width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+    background-image: repeating-linear-gradient(25deg,#686868,#585858 10px,#585858 10px,#686868 20px);
+    background-attachment: fixed;
+}
+.container {
+    // @include flexCenter(column);
+
+    display: grid;
+    grid-template-areas:
+    'image data'
+    'stats stats'
+    'type type';
+    justify-content: center;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 3fr 3fr 4fr;
+    background-color: rgb(235, 235, 235);
+    border: 10px solid gray;
+    height: 150vh;
+    width: 40vw;
+    border-radius: 1.5vmin;
+    position: relative;
+}

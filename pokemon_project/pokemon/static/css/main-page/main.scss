@@ -1,0 +1,20 @@
+@import 'table';
+@import 'navbar';
+@import 'header';
+@import 'mixins';
+
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+body {
+    width: 100vw;
+    background-image: repeating-linear-gradient(25deg,#686868,#585858 10px,#585858 10px,#686868 20px);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}

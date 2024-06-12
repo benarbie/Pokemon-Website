@@ -1,0 +1,27 @@
+@import 'mixins';
+
+#logo {
+    display: flex;
+    height: 20rem;
+    width: 50rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-right: 3vmin;
+}
+#web-desc {
+    color: rgb(236, 193, 52);
+    text-shadow: 
+        -2px -2px 2px #0266d8,  
+        2px -2px 2px #0266d8,
+        -2px 2px 2px #0266d8,
+        2px 2px 2px #0266d8;
+    font-size: 2.4rem;
+    text-align: center;
+    font-family: fantasy;
+    font-style: italic;
+}
+#pokemon-enlarge {
+    font-size: 3.5rem;
+    border-bottom: 5px solid rgb(236, 193, 52);
+    border-radius: 5%;
+}

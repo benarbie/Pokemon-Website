@@ -1,0 +1,70 @@
+@import 'mixins';
+
+.data {
+    @include flexCenter(column);
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;;
+    grid-area: data;
+    align-items: center;
+    position: relative;
+    padding-bottom: 5vmin;
+    // Dex Entry
+    .dex-entry {
+        @include flexCenter(row);
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        
+        // Entry Number
+        > span {
+            font-size: 1rem;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        // Pokeball
+        .pokeball {
+            width: 4vmin;
+        }
+    }
+
+    // Name
+    .name {
+        @include coolShadow;
+        font-family: monospace;
+        min-width: 75%;
+        max-width: 95%;
+        font-size: 3rem;
+        margin-bottom: 1vmin;
+        text-align: center;
+        color: rgb(230, 230, 230);
+        
+    }
+    // Pokemon typing
+    .type {
+        @include flexCenter(row);
+        > div {
+            @include flexCenter(row);
+            @include coolShadow();
+            padding: 0.5rem;
+            border-radius: 1vmin;
+            color: white;
+            font-size: 1.5rem;
+            font-family: monospace;
+            margin: 0 0.5rem;
+            height: 4vmin;
+            width: 10vmin;
+        }
+    }
+    .type-1 {
+        justify-self: flex-end;
+        border: 3px solid black;
+    }
+    .type-2 {
+        border: 3px solid black;
+        justify-self: flex-start;
+    }
+    
+}
+

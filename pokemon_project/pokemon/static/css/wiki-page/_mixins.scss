@@ -1,0 +1,15 @@
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin coolShadow() {
+    
+    text-shadow: 
+        -2px -2px 2px #000,  
+        2px -2px 2px #000,
+        -2px 2px 2px #000,
+        2px 2px 2px #000;
+}

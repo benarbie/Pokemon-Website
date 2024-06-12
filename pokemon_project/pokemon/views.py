@@ -1,18 +1,17 @@
 from django.shortcuts import render
+from django.shortcuts import get_list_or_404
+from pokemon.models import Pokemon
 import csv
 
 
 def main(request):
 
-    data = []
+    objects = Pokemon.objects.all()
 
-    with open('../info/mons.csv', encoding='utf-8') as file:
-        reader = csv.reader(file)
-        for mon in reader:
-            data.append({'name': mon[0], 'type1': mon[1], 'type2': mon[2], 'src': mon[3]})
+    return render(request, 'pokemon/main.html', {'pokemon': objects})
 
+def wiki_page(request, entry):
+    
+    pokemon = get_list_or_404(Pokemon, entry=entry)
 
-    return render(request, 'pokemon/main.html', {'data': data})
-
-def wiki_page(request):
-    return render(request, 'pokemon/wiki-page.html')
+    return render(request, 'pokemon/wiki-page.html', {'pokemon': pokemon})
