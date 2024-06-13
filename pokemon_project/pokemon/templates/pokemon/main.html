@@ -28,7 +28,8 @@
                     <div class="nav-button">Type<br>Chart</div>
                 </div> 
                 <div class="search-bar">
-                    <input type="text" placeholder="Search">
+                    <input id="search-bar" type="text" placeholder="Search">
+                    <div id="search-results" class="search-results-hide"></div>
                 </div>
             </nav>
 
@@ -70,7 +71,7 @@
                         <td><img class="art" src="{{ mon.sprite }}" alt="{{ mon.name }}"></td>
 
                         {% comment %} POKEMON NAME {% endcomment %}
-                        <td class="name"><a href="{% url 'wiki-page' entry=mon.entry %}">{{ mon.name }}</a></td>
+                        <td class="name"><a href="{% url 'wiki-page-name' name=mon.name %}">{{ mon.name }}</a></td>
 
                         {% comment %} POKEMON TYPE 1 {% endcomment %}
                         <td class="type type1 type-{{ mon.type1|lower }}">{{ mon.type1 }}</td>
@@ -85,4 +86,67 @@
             </table>
         </div>
     </body>
-    </html>
+</html>
+<script>
+    const searchBar = document.querySelector('#search-bar');
+    const searchResultsDiv = document.querySelector('#search-results');
+
+    MAXLENGTH = 10;
+    const names = [];
+
+    {% for mon in pokemon %}
+        names.push('{{ mon.name }}');
+    {% endfor %}
+
+    searchBar.addEventListener('input', (e) => {
+        const value = e.target.value
+    
+        //searchResultsDiv.innerHTML = ''
+        //searchResultsDiv.style.opacity = '0'
+        searchResultsDiv.innerHTML = ''
+        searchResultsDiv.classList.remove('search-results-show')
+        searchResultsDiv.classList.add('search-results-hide')
+        
+
+
+        if (value.length >= 2){
+    
+            const matchingNames = names.filter(name => name.toLowerCase().includes(value))
+            
+            if (matchingNames.length > 0) {
+                //searchResultsDiv.style.opacity = '1'
+                searchResultsDiv.classList.remove('search-results-hide')
+                searchResultsDiv.classList.add('search-results-show')
+            }
+    
+            matchingNames.sort()
+
+            const firstTenNames = matchingNames.slice(0, 10);
+    
+            firstTenNames.forEach(name => {
+                const a = document.createElement('a')
+                a.href = `wiki/${name}`
+                a.textContent = name
+                a.classList = 'search-result'
+                searchResultsDiv.appendChild(a)
+    
+            })
+
+        }
+        
+    })
+    document.addEventListener('click', (element) => {
+        if (!searchResultsDiv.contains(element.target) && !searchBar.contains(element.target)) {
+            searchResultsDiv.classList.remove('search-results-show')
+            searchResultsDiv.classList.add('search-results-hide')
+        }
+    })
+    searchBar.addEventListener('click', () => {
+        if (searchBar.value.length >= 2) {
+            searchResultsDiv.classList.remove('search-results-hide')
+            searchResultsDiv.classList.add('search-results-show')
+        }
+    })
+    
+    
+</script>

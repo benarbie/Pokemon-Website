@@ -389,7 +389,7 @@ body {
   justify-content: flex-end;
   width: 20%;
 }
-.navbar .search-bar > input {
+.navbar .search-bar > #search-bar {
   display: block;
   height: 100%;
   width: 100%;
@@ -401,17 +401,41 @@ body {
   border: 5px solid rgb(131, 131, 131);
   transition: 0.2s all;
 }
-.navbar .search-bar > input::-moz-placeholder {
+.navbar .search-bar > #search-bar::-moz-placeholder {
   font-size: 2rem;
   color: rgba(255, 255, 255, 0.85);
 }
-.navbar .search-bar > input::placeholder {
+.navbar .search-bar > #search-bar::placeholder {
   font-size: 2rem;
   color: rgba(255, 255, 255, 0.85);
 }
-.navbar .search-bar > input:focus {
+.navbar .search-bar > #search-bar:focus {
   outline: none;
   border: 8px solid rgb(200, 200, 200);
+}
+.navbar .search-bar #search-results {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  width: 15rem;
+  margin-left: 5rem;
+  margin-top: 1rem;
+  background-color: aliceblue;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+}
+.navbar .search-bar #search-results .search-result {
+  pointer-events: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+}
+.navbar .search-bar #search-results .search-result:hover {
+  background-color: #bde0ff;
 }
 
 .form-switcher {

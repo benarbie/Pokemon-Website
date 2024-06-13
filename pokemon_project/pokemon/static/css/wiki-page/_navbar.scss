@@ -41,7 +41,7 @@
         display:flex;
         justify-content: flex-end;
         width: 20%;
-        > input {
+        > #search-bar {
             display: block;
             height: 100%;
             width: 100%;
@@ -60,6 +60,31 @@
             &:focus {
                 outline: none;
                 border: 8px solid rgb(200, 200, 200);
+            }
+        }
+        #search-results {
+            display: flex;
+            flex-direction: column;
+            border: 3px solid black;
+            width: 15rem;
+            margin-left: 5rem;
+            margin-top: 1rem;
+            background-color: aliceblue;
+            border-radius: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transition: .2s;
+    
+            .search-result {
+                pointer-events: auto;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 2rem;
+                text-decoration: none;
+                color: black;
+                border: 1px solid black;
+                &:hover {
+                    background-color: darken(aliceblue, 10%);
+                }
             }
         }
     }

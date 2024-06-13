@@ -1,69 +1,117 @@
 @import 'mixins';
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    width: 25vw;
-    height: 8vh;
-    margin-bottom: 2vh;
-    gap: 1rem;
-    
-    > div {
-        height: 100%;
-    }
+    margin-top: 10vmin;
+    display: grid;
+    grid-template-areas:'menu search';
+    grid-template-columns: 2fr 1fr;
+    column-gap: 5vmin;
+
     .buttons-frame {
-        margin-top: 8vmin;
-        display: flex;
-        width: 100%;
-        height: 80%;
-        background-color: rgb(71, 71, 71);
-        border: 8px solid rgb(71, 71, 71);
-        border-radius: 15px;
-        gap: 1rem;
+        grid-area: menu;
+        // border: 3px solid rgb(65, 65, 65);
+        // box-shadow: 0 0 2px 3px;
+        border: 3px solid rgb(236, 193, 52);
+        box-shadow: 0 0 4px 6px #0266d8, 0px 7px 4px 0px black, inset 0 0 5px 2px black;
+        border-radius: 10px;
+        background-color: rgb(100, 100, 100);
+        height: 5vmin;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+        column-gap: 1vmin;
+        padding-left: 5px;
+        
         .nav-button {
             @include flexCenter(row);
-            text-align: center;
+            // border: 3px solid rgb(58, 58, 58);
+            border: 2px solid rgb(236, 193, 52);
+            box-shadow: 0 0 4px 2px #0266d8, 0px 3px 4px 0px black, inset 0 0 5px 1px black;
             border-radius: 5px;
-            color: rgba(255, 255, 255, 0.85);
-            background-color: rgb(138, 138, 138);
-            height: 100%;
-            width: 33%;
-            font-size:1.5rem;
+            font-size: 1.3rem;
             font-family: monospace;
-            padding: 0.5rem;
-            transition: hover .2s;
-            transition: opacity 1s;
+            font-style: italic;
+            height: 80%;
+            width: 90%;
+            background-color: rgb(153, 153, 153);
+            cursor: pointer;
+            align-self: center;
+            transition: transform .3s;
+
             &:hover {
-                background-color: rgb(200,200,200);
-                cursor: pointer;
+                transform: translateY(-15%);
             }
+
         }
     }
     .search-bar {
-        margin-top: 8vmin;
-        display:flex;
-        justify-content: flex-end;
-        width: 40%;
-        > input {
-            display: block;
-            height: 80%;
-            width: 100%;
-            border-radius: 20px;
-            font-family: monospace;
+        grid-area: search;
+        // border: 3px solid blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        #search-bar {
+            height: 5vmin;
+            width: 15vmin;
+            background-color: rgb(100, 100, 100);
+            // border: 3px solid rgb(59, 59, 59);
+            // box-shadow: 0 0 2px 3px;
+            border: 3px solid rgb(236, 193, 52);
+            box-shadow: 0 0 4px 6px #0266d8, 0px 7px 4px 0px black, inset 0 0 5px 2px black;
+            border-radius: 10px;
             font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.85);
-            background-color: rgb(70, 70, 70);
-            border: 5px solid rgb(131, 131, 131);;
-            transition: .2s all;
+            outline: none;
+            transition: border .3s, box-shadow .3s;
 
-            &::placeholder {
-                font-size: 2rem;
-                color: rgba(255, 255, 255, 0.85);
+            &:focus-within {
+                border: 3px solid lighten(rgb(236,193,52), 15%);
+                box-shadow: 0 0 4px 6px lighten(#0266d8, 15%), 0px 7px 4px 0px black, inset 0 0 5px 2px black;
             }
-            &:focus {
-                outline: none;
-                border: 8px solid rgb(200, 200, 200);
+            
+
+        }
+        #search-results {
+            a {
+                font-size: 1.5rem;
+                font-family: monospace;
+                color: black;
+                line-height: 2.5rem;
+                &:hover {
+                    background-color: darken(gray, 8%);
+                    color: rgb(122, 179, 245);
+                }
+            }
+            & a:not(:last-child) {
+                border-bottom: 1px solid black;
             }
         }
+        .search-results-show {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            background-color: gray;
+            border: 3px solid rgb(59,59,59);
+            border-radius: 10px;
+            margin-top: 5.5vmin;
+            width: 15vmin;
+            padding: 5px;
+            transition: opacity .3s;
+            opacity: 1;
+            
+            
+        }
+        .search-results-hide {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            background-color: gray;
+            border-radius: 10px;
+            margin-top: 5.5vmin;
+            width: 15vmin;  
+            opacity: 0;
+
+            
+        }
     }
-    }
+}

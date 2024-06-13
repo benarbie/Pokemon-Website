@@ -185,76 +185,103 @@
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  width: 25vw;
-  height: 8vh;
-  margin-bottom: 2vh;
-  gap: 1rem;
-}
-.navbar > div {
-  height: 100%;
+  margin-top: 10vmin;
+  display: grid;
+  grid-template-areas: "menu search";
+  grid-template-columns: 2fr 1fr;
+  -moz-column-gap: 5vmin;
+       column-gap: 5vmin;
 }
 .navbar .buttons-frame {
-  margin-top: 8vmin;
-  display: flex;
-  width: 100%;
-  height: 80%;
-  background-color: rgb(71, 71, 71);
-  border: 8px solid rgb(71, 71, 71);
-  border-radius: 15px;
-  gap: 1rem;
+  grid-area: menu;
+  border: 3px solid rgb(236, 193, 52);
+  box-shadow: 0 0 4px 6px #0266d8, 0px 7px 4px 0px black, inset 0 0 5px 2px black;
+  border-radius: 10px;
+  background-color: rgb(100, 100, 100);
+  height: 5vmin;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  -moz-column-gap: 1vmin;
+       column-gap: 1vmin;
+  padding-left: 5px;
 }
 .navbar .buttons-frame .nav-button {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  text-align: center;
+  border: 2px solid rgb(236, 193, 52);
+  box-shadow: 0 0 4px 2px #0266d8, 0px 3px 4px 0px black, inset 0 0 5px 1px black;
   border-radius: 5px;
-  color: rgba(255, 255, 255, 0.85);
-  background-color: rgb(138, 138, 138);
-  height: 100%;
-  width: 33%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: monospace;
-  padding: 0.5rem;
-  transition: hover 0.2s;
-  transition: opacity 1s;
+  font-style: italic;
+  height: 80%;
+  width: 90%;
+  background-color: rgb(153, 153, 153);
+  cursor: pointer;
+  align-self: center;
+  transition: transform 0.3s;
 }
 .navbar .buttons-frame .nav-button:hover {
-  background-color: rgb(200, 200, 200);
-  cursor: pointer;
+  transform: translateY(-15%);
 }
 .navbar .search-bar {
-  margin-top: 8vmin;
+  grid-area: search;
   display: flex;
-  justify-content: flex-end;
-  width: 40%;
+  justify-content: center;
+  align-items: center;
 }
-.navbar .search-bar > input {
-  display: block;
-  height: 80%;
-  width: 100%;
-  border-radius: 20px;
-  font-family: monospace;
+.navbar .search-bar #search-bar {
+  height: 5vmin;
+  width: 15vmin;
+  background-color: rgb(100, 100, 100);
+  border: 3px solid rgb(236, 193, 52);
+  box-shadow: 0 0 4px 6px #0266d8, 0px 7px 4px 0px black, inset 0 0 5px 2px black;
+  border-radius: 10px;
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.85);
-  background-color: rgb(70, 70, 70);
-  border: 5px solid rgb(131, 131, 131);
-  transition: 0.2s all;
-}
-.navbar .search-bar > input::-moz-placeholder {
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.85);
-}
-.navbar .search-bar > input::placeholder {
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.85);
-}
-.navbar .search-bar > input:focus {
   outline: none;
-  border: 8px solid rgb(200, 200, 200);
+  transition: border 0.3s, box-shadow 0.3s;
+}
+.navbar .search-bar #search-bar:focus-within {
+  border: 3px solid #f3d67a;
+  box-shadow: 0 0 4px 6px #298cfd, 0px 7px 4px 0px black, inset 0 0 5px 2px black;
+}
+.navbar .search-bar #search-results a {
+  font-size: 1.5rem;
+  font-family: monospace;
+  color: black;
+  line-height: 2.5rem;
+}
+.navbar .search-bar #search-results a:hover {
+  background-color: #6c6c6c;
+  color: rgb(122, 179, 245);
+}
+.navbar .search-bar #search-results a:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+.navbar .search-bar .search-results-show {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  border: 3px solid rgb(59, 59, 59);
+  border-radius: 10px;
+  margin-top: 5.5vmin;
+  width: 15vmin;
+  padding: 5px;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+.navbar .search-bar .search-results-hide {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  border-radius: 10px;
+  margin-top: 5.5vmin;
+  width: 15vmin;
+  opacity: 0;
 }
 
 #logo {
@@ -268,7 +295,7 @@
 
 #web-desc {
   color: rgb(236, 193, 52);
-  text-shadow: -2px -2px 2px #0266d8, 2px -2px 2px #0266d8, -2px 2px 2px #0266d8, 2px 2px 2px #0266d8;
+  text-shadow: -2px -2px 2px #0266d8, 2px -2px 2px #0266d8, -2px 2px 2px #0266d8, 2px 2px 2px #0266d8, 0 3px 4px black;
   font-size: 2.4rem;
   text-align: center;
   font-family: fantasy;

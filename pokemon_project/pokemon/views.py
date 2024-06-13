@@ -10,8 +10,14 @@ def main(request):
 
     return render(request, 'pokemon/main.html', {'pokemon': objects})
 
-def wiki_page(request, entry):
+def wiki_page_entry(request, entry):
     
     pokemon = get_list_or_404(Pokemon, entry=entry)
+
+    return render(request, 'pokemon/wiki-page.html', {'pokemon': pokemon})
+
+def wiki_page_name(request, name):
+    
+    pokemon = get_list_or_404(Pokemon, name=name)
 
     return render(request, 'pokemon/wiki-page.html', {'pokemon': pokemon})
